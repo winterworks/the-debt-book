@@ -1,4 +1,4 @@
-﻿namespace DebtBook
+﻿namespace DebtBook.ViewModel
 {
     /// <summary>
     /// Interaction logic for App.xaml

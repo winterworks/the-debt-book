@@ -1,23 +1,19 @@
 ﻿using System.Collections.Generic;
+using DebtBook.Model;
+using DebtBook.Model.Entity;
 
-namespace DebtBook
+namespace DebtBook.ViewModel
 {
-
     public class MainViewModel
     {
 
-        public List<int> List;
- 
+        public List<Person> List { get; set; }
 
         public MainViewModel()
         {
-            List = new List<int>();
-            List.Add(1);
-            List.Add(2);
-            List.Add(3);
-            List.Add(4);
+            var debtBooker = new DebtBooker();
+            List = debtBooker.DebtList;
         }
-
     }
 
 }

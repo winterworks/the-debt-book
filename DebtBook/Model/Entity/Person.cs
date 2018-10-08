@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace DebtBook.Model
+namespace DebtBook.Model.Entity
 {
     public class Person
     {

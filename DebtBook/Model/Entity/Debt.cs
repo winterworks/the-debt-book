@@ -1,6 +1,6 @@
 using System;
 
-namespace DebtBook.Model
+namespace DebtBook.Model.Entity
 {
     public class Debt
     {

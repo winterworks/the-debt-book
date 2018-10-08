@@ -54,7 +54,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Model\DebtBook.cs" />
+    <Compile Include="Model\DebtBooker.cs" />
     <Compile Include="Model\Entity\Debt.cs" />
     <Compile Include="Model\Entity\Person.cs" />
     <Compile Include="ViewModel\MainViewModel.xaml.cs">
