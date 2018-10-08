@@ -7,18 +7,26 @@
         mc:Ignorable="d"
         Title="Dept Book" Height="350" Width="525">
     <Grid>
+        <Grid.Resources>
+            <DataTemplate x:Key="personName">
+                <TextBlock Text="{Binding Path=Name}" />
+            </DataTemplate>
+        </Grid.Resources>
+        
         <Label Content="Debt book" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="39,18,414.429,277.143"/>
         <Button Content="Add Person" HorizontalAlignment="Center" Margin="0,275,0,0" VerticalAlignment="Top" Width="75"/>
         <StackPanel Height="203" Margin="0,49,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Width="434">
             <Label Content="Persons"/>
-            <ListBox Height="177" Margin="0,0,0.286,0" ItemsSource="{Binding Path=List, Mode=OneWay}" ItemTemplate="{StaticResource personName}"/>
+            <ListBox Height="177" Margin="0,0,0.286,0" ItemsSource="{Binding Path=List, Mode=OneWay}" Name="personsListBox">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock Text="here show person name" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
         </StackPanel>
-        
-        <Grid.Resources>
-            <DataTemplate x:Key="personName">
-                <TextBlock Text="{Binding Path=Name}" />
-            </DataTemplate> 
-        </Grid.Resources>
     </Grid>
     <Window.DataContext>
         

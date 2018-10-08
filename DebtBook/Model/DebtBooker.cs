@@ -9,8 +9,9 @@ namespace DebtBook.Model
 
         public DebtBooker()
         {
-            DebtList.Add(new Person("Henk", new List<Debt>()));
-            DebtList.Add(new Person("Jannie", new List<Debt>()));
+            DebtList = new List<Person>();
+            DebtList.Add(new Person("Henk"));
+            DebtList.Add(new Person("Jannie"));
         }
     }
 }

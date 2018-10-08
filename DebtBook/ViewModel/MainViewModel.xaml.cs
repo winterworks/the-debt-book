@@ -13,6 +13,7 @@ namespace DebtBook.ViewModel
         {
             var debtBooker = new DebtBooker();
             List = debtBooker.DebtList;
+
         }
     }
 
