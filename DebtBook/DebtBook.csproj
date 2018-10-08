@@ -57,8 +57,7 @@
     <Compile Include="Model\DebtBook.cs" />
     <Compile Include="Model\Entity\Debt.cs" />
     <Compile Include="Model\Entity\Person.cs" />
-    <Compile Include="ViewModel\MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="ViewModel\MainViewModel.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

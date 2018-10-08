@@ -4,9 +4,19 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DebtBook"
+        xmlns:viewModel="clr-namespace:DebtBook"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Dept Book" Height="350" Width="525">
     <Grid>
-        <Label Content="Debt book" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Label Content="Debt book" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="39,18,414.429,277.143"/>
+        <Button Content="Add Person" HorizontalAlignment="Center" Margin="0,275,0,0" VerticalAlignment="Top" Width="75"/>
+        <StackPanel Height="203" Margin="0,49,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Width="434">
+            <Label Content="Persons"/>
+            <ListBox Height="177" Name="listPersons" Margin="0,0,0.286,0" ItemsSource="{Binding Path=List, Mode=OneWay}"/>
+        </StackPanel>
     </Grid>
+    <Window.DataContext>
+        <local:MainViewModel/>
+    </Window.DataContext>
+
 </Window>
