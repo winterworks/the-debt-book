@@ -1,20 +1,24 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using DebtBook.Model;
 using DebtBook.Model.Entity;
 
 namespace DebtBook.ViewModel
 {
-    public class MainViewModel
+    public class MainViewModel : INotifyPropertyChanged
     {
 
-        public List<Person> List { get; set; }
+        DebtBooker debtBooker = new DebtBooker();
 
-        public MainViewModel()
+        public List<Debtor> List { get { return debtBooker.Debtors; } }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void NotifyPropertyChanged([CallerMemberName] string propertyName = null)
         {
-            var debtBooker = new DebtBooker();
-            List = debtBooker.DebtList;
-
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-    }
 
+    }
 }

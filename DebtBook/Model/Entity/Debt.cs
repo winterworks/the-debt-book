@@ -5,7 +5,7 @@ namespace DebtBook.Model.Entity
     public class Debt
     {
         private DateTime Date { get; set; }
-        private string Value { get; set; }
+        public string Value { get; }
         private string Description{ get; set; }
 
         public Debt(DateTime date, string value, string description)
