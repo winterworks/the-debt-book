@@ -1,0 +1,25 @@
+﻿<Window x:Class="Debt_Book.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        ResizeMode="NoResize"
+        DataContext="{Binding Source={StaticResource ViewModelLocator}, Path=MainViewModel}" >
+    <Grid>
+        <TextBlock Text="{Binding Text}" VerticalAlignment="Center" />
+        <ListBox ItemsSource="{Binding debtors}" SelectedItem="{Binding SelectedDebtor}" Width="200" HorizontalAlignment="Center" >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <DockPanel>
+                        <TextBlock Text="{Binding Name}" DockPanel.Dock="Left"
+                                   Margin="5,0,10,0" Width="100"/>
+                        <TextBlock Text="{Binding DebtSum}" DockPanel.Dock="Right"
+                                   Margin="5,0,10,0" Width="100" />
+                    </DockPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</Window>

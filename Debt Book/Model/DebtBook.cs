@@ -1,13 +1,12 @@
-using System.Collections.Generic;
-using DebtBook.Model.Entity;
+﻿using System.Collections.Generic;
 
-namespace DebtBook.Model
+namespace Debt_Book.Model
 {
-    public class DebtBooker
+    class DebtBook
     {
-        public List<Debtor> Debtors { get; set; }
-        
-        public DebtBooker()
+        public List<Debtor> Debtors { get; }
+
+        public DebtBook()
         {
             Debtors = new List<Debtor>();
 
@@ -21,7 +20,7 @@ namespace DebtBook.Model
             Debtors.Add(new Debtor(name));
         }
 
-        public void AddDebtTo(Debtor debtor, Debt debt) 
+        public void AddDebtTo(Debtor debtor, Debt debt)
         {
             /* 
              * TODO: Check if person is in the DebtList -> 

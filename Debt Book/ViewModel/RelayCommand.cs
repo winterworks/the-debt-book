@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Windows.Input;
 
-namespace DebtBook.ViewModel
+namespace Debt_Book.ViewModel
 {
     // From https://archive.codeplex.com/?p=mvvmfoundation
 
