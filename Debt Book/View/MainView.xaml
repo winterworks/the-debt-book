@@ -9,6 +9,7 @@
         DataContext="{Binding Source={StaticResource ViewModelLocator}, Path=MainViewModel}" >
     <Grid>
         <ListBox ItemsSource="{Binding Debtors}" SelectedItem="{Binding SelectedDebtor}" Width="200" HorizontalAlignment="Center" >
+            <!-- Solution inspired by http://stackoverflow.com/a/11102741 -->
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <DockPanel>
