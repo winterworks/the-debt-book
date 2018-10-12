@@ -1,5 +1,6 @@
 ﻿using Debt_Book.Model;
 using Debt_Book.View;
+using GalaSoft.MvvmLight.Messaging;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -28,6 +29,7 @@ namespace Debt_Book.ViewModel
 
                 // Make an action when Debtor is clicked
                 _navService.OpenWindow(typeof(DebtorViewModel));
+                Messenger.Default.Send(_selectedDebtor);
             }
         }
 
