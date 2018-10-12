@@ -8,8 +8,7 @@
         ResizeMode="NoResize"
         DataContext="{Binding Source={StaticResource ViewModelLocator}, Path=MainViewModel}" >
     <Grid>
-        <TextBlock Text="{Binding Text}" VerticalAlignment="Center" />
-        <ListBox ItemsSource="{Binding debtors}" SelectedItem="{Binding SelectedDebtor}" Width="200" HorizontalAlignment="Center" >
+        <ListBox ItemsSource="{Binding Debtors}" SelectedItem="{Binding SelectedDebtor}" Width="200" HorizontalAlignment="Center" >
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <DockPanel>

@@ -8,13 +8,13 @@ namespace Debt_Book.ViewModel
 {
     class MainViewModel: INotifyPropertyChanged
     {
-        private readonly INavigationService ns;
+        private readonly INavigationService navService;
         private Debtor _selectedDebtor;
         private DebtBook debtBook;
-        public string Text { get; set; }
-        public List<Debtor> debtors => debtBook.Debtors;
+        public List<Debtor> Debtors => debtBook.Debtors;
 
         public Debtor SelectedDebtor
+        // solution inspired by http://stackoverflow.com/a/12297537
         {
             get {
                 return _selectedDebtor;
@@ -25,17 +25,15 @@ namespace Debt_Book.ViewModel
                 _selectedDebtor = value;
                 NotifyPropertyChanged();
 
-                // 
-                this.Text = "Test";
-                NotifyPropertyChanged("Text");
+                // Make an action when debtor is clicked
+
             }
         }
 
-        public MainViewModel(INavigationService ns)
+        public MainViewModel(INavigationService ns, DebtBook db)
         {
-            this.ns = ns;
-            this.debtBook = new DebtBook();
-            this.Text = "test";
+            this.navService = ns;
+            this.debtBook = db;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
