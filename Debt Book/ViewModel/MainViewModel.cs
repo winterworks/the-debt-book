@@ -2,8 +2,6 @@
 using Debt_Book.View;
 using GalaSoft.MvvmLight.Messaging;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
 
 namespace Debt_Book.ViewModel
 {
