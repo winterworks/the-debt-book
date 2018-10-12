@@ -8,13 +8,10 @@ using Debt_Book.View;
 
 namespace Debt_Book.ViewModel
 {
-    class AddDebtViewModel
+    class AddDebtViewModel: AbstractViewModel
     {
         private readonly INavigationService ns;
 
-        public AddDebtViewModel(INavigationService ns, DebtBook db)
-        {
-            this.ns = ns;
-        }
+        public AddDebtViewModel(INavigationService ns, DebtBook db) : base(ns, db){}
     }
 }

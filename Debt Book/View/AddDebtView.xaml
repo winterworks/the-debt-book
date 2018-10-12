@@ -6,11 +6,9 @@
         xmlns:mv="clr-namespace:Debt_Book.ViewModel"
         mc:Ignorable="d"
         Title="AddDebtView" Height="450" Width="800"
-        ResizeMode="NoResize">
-    <Window.DataContext>
-        <mv:AddDebtViewModel />
-    </Window.DataContext>
+        ResizeMode="NoResize"
+        DataContext="{Binding Source={StaticResource ViewModelLocator}, Path=AddDebtViewModel}" >
     <Grid>
-        
+        <TextBlock Text="AddDebtView" HorizontalAlignment="Center" VerticalAlignment="Center" />
     </Grid>
 </Window>

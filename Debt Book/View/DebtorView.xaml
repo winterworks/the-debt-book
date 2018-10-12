@@ -6,11 +6,9 @@
         xmlns:mv="clr-namespace:Debt_Book.ViewModel"
         mc:Ignorable="d"
         Title="DebtorView" Height="450" Width="800"
-        ResizeMode="NoResize">
-    <Window.DataContext>
-        <mv:DebtorViewModel />
-    </Window.DataContext>
+        ResizeMode="NoResize"
+        DataContext="{Binding Source={StaticResource ViewModelLocator}, Path=DebtorViewModel}" >
     <Grid>
-        
+        <TextBlock Text="DebtorView" HorizontalAlignment="Center" VerticalAlignment="Center" />
     </Grid>
 </Window>

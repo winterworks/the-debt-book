@@ -6,12 +6,13 @@ using System.Runtime.CompilerServices;
 
 namespace Debt_Book.ViewModel
 {
-    class MainViewModel: INotifyPropertyChanged
+    class MainViewModel: AbstractViewModel
     {
-        private readonly INavigationService navService;
         private Debtor _selectedDebtor;
-        private DebtBook debtBook;
-        public List<Debtor> Debtors => debtBook.Debtors;
+
+        public MainViewModel(INavigationService ns, DebtBook db) : base(ns, db){}
+
+        public List<Debtor> Debtors => _debtBook.Debtors;
 
         public Debtor SelectedDebtor
         // solution inspired by http://stackoverflow.com/a/12297537
@@ -25,21 +26,10 @@ namespace Debt_Book.ViewModel
                 _selectedDebtor = value;
                 NotifyPropertyChanged();
 
-                // Make an action when debtor is clicked
-
+                // Make an action when Debtor is clicked
+                _navService.OpenWindow(typeof(DebtorViewModel));
             }
         }
 
-        public MainViewModel(INavigationService ns, DebtBook db)
-        {
-            this.navService = ns;
-            this.debtBook = db;
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        private void NotifyPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
     }
 }
