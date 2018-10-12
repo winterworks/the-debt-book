@@ -26,7 +26,7 @@ namespace Debt_Book.ViewModel
                 NotifyPropertyChanged();
 
                 // 
-                this.Text = "Loppkij";
+                this.Text = "Test";
                 NotifyPropertyChanged("Text");
             }
         }
