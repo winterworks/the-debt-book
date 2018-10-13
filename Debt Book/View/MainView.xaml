@@ -6,20 +6,36 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
         ResizeMode="NoResize"
-        DataContext="{Binding Source={StaticResource ViewModelLocator}, Path=MainViewModel}" >
-    <Grid>
-        <ListBox ItemsSource="{Binding Debtors}" SelectedItem="{Binding SelectedDebtor}" Width="200" HorizontalAlignment="Center" >
-            <!-- Solution inspired by http://stackoverflow.com/a/11102741 -->
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <DockPanel>
-                        <TextBlock Text="{Binding Name}" DockPanel.Dock="Left"
-                                   Margin="5,0,10,0" Width="100"/>
-                        <TextBlock Text="{Binding DebtSum}" DockPanel.Dock="Right"
-                                   Margin="5,0,10,0" Width="100" />
-                    </DockPanel>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+        DataContext="{Binding Source={StaticResource ViewModelLocator}, Path=MainViewModel}">
+    <Window.Resources>
+        <Style TargetType="Label" >
+            <Setter Property="Margin" Value="5,5,5,5" />
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="5,5,5,5" />
+        </Style>
+        <Style TargetType="Button" >
+            <Setter Property="Margin" Value="5,5,5,5" />
+        </Style>
+    </Window.Resources>
+    <Grid Margin="32,32,32,32">
+        <Grid HorizontalAlignment="Center">
+            <Label Content="Debts" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <ListBox ItemsSource="{Binding Debtors}" SelectedItem="{Binding SelectedDebtor}"
+                     HorizontalAlignment="Right" Width="250" Margin="0,32,0,0">
+                <!-- Solution inspired by http://stackoverflow.com/a/11102741 -->
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <DockPanel>
+                            <TextBlock Text="{Binding Name}" DockPanel.Dock="Left"
+                                       Margin="5,0,10,0" Width="150" />
+                            <TextBlock Text="{Binding DebtSum}" DockPanel.Dock="Right"
+                                       Margin="5,0,10,0" Width="10" />
+                        </DockPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <Button Content="Add debtor" HorizontalAlignment="Right" VerticalAlignment="Top" />
+        </Grid>
     </Grid>
 </Window>

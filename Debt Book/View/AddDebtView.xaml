@@ -7,8 +7,39 @@
         mc:Ignorable="d"
         Title="AddDebtView" Height="450" Width="800"
         ResizeMode="NoResize"
-        DataContext="{Binding Source={StaticResource ViewModelLocator}, Path=AddDebtViewModel}" >
-    <Grid>
-        <TextBlock Text="AddDebtView" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        DataContext="{Binding Source={StaticResource ViewModelLocator}, Path=AddDebtViewModel}">
+    <Window.Resources>
+        <Style TargetType="Label" >
+            <Setter Property="Margin" Value="5,5,5,5"></Setter>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="5,5,5,5" />
+        </Style>
+        <Style TargetType="Button" >
+            <Setter Property="Margin" Value="5,5,5,5" />
+        </Style>
+    </Window.Resources>
+    <Grid Margin="32,32,32,32">
+        <TextBlock Text="Add debtor" HorizontalAlignment="Center" />
+        <Grid HorizontalAlignment="Center" Margin="0, 32, 0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions >
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="1" Grid.Column="0" Content="Debtor name" HorizontalAlignment="Left"/>
+            <TextBox Grid.Row="1" Grid.Column="1" Width="200" Name="DebtorName"/>
+            
+            <Label Grid.Row="2" Grid.Column="0" Content="Initial value" HorizontalAlignment="Left"/>
+            <TextBox Grid.Row="2" Grid.Column="1" Width="200" Name="InitialDebt"/>
+
+            <Button Content="Cancel" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Left" />
+            <Button Content="Add debtor" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Right" />
+        </Grid>
     </Grid>
 </Window>
