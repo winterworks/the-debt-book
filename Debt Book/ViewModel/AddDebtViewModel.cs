@@ -43,6 +43,7 @@ namespace Debt_Book.ViewModel
         {
             // save new debtor here
             _debtBook.AddDebtor(debtor);
+            ExitWindow();
         }
 
         private bool SaveDebtorCanExecute()
