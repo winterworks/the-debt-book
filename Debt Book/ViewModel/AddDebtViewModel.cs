@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using Debt_Book.Model;
 using Debt_Book.View;
 
@@ -13,5 +14,39 @@ namespace Debt_Book.ViewModel
         private readonly INavigationService ns;
 
         public AddDebtViewModel(INavigationService ns, DebtBook db) : base(ns, db){}
+
+
+        Debtor debtor = new Debtor("");
+
+        public string Name
+        {
+            get => debtor.Name;
+            set {
+                if (value != debtor.Name) {
+                    debtor.Name = value;
+                }
+            }
+        }
+
+        private ICommand _saveDebtorCommand;
+        public ICommand SaveDebtorCommand
+        {
+            get {
+                return _saveDebtorCommand ?? (_saveDebtorCommand =
+                    new RelayCommand(SaveDebtor, SaveDebtorCanExecute));
+            }
+        }
+
+
+        private void SaveDebtor()
+        {
+            // save new debtor here
+            _debtBook.AddDebtor(debtor);
+        }
+
+        private bool SaveDebtorCanExecute()
+        {
+            return (Name != "");
+        }
     }
 }

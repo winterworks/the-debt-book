@@ -4,7 +4,7 @@ namespace Debt_Book.Model
 {
     class Debtor
     {
-        public string Name { get; }
+        public string Name { get; set; }
         public List<Debt> Debts { get; }
 
         public double DebtSum
