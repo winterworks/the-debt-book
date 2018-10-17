@@ -15,5 +15,10 @@ namespace Debt_Book.ViewModel
                 this._selectedDebtor = debtor;
             });
         }
+        
+        protected override void ExitWindow()
+        {
+            _navService.CloseWindow(typeof(DebtorViewModel));
+        }
     }
 }

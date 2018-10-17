@@ -39,5 +39,10 @@ namespace Debt_Book.ViewModel
         {
             _navService.OpenWindow(typeof(AddDebtViewModel));
         }
+
+        protected override void ExitWindow()
+        {
+            _navService.CloseWindow(typeof(MainViewModel));
+        }
     }
 }

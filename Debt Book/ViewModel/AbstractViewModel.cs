@@ -1,12 +1,8 @@
 ﻿using Debt_Book.Model;
 using Debt_Book.View;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace Debt_Book.ViewModel
 {
@@ -26,5 +22,10 @@ namespace Debt_Book.ViewModel
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+        
+        private ICommand _cancel;
+        public ICommand Cancel => _cancel ?? (_cancel = new RelayCommand(ExitWindow));
+
+        protected abstract void ExitWindow();
     }
 }
