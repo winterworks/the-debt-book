@@ -19,7 +19,7 @@ namespace Debt_Book.View
                 case "DebtorViewModel":
                     window = new DebtorView();
                     break;
-                case "AddDebtViewModel":
+                case "AddDebtorViewModel":
                     window = new AddDebtorView();
                     break;
             }

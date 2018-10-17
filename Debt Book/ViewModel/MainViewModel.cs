@@ -40,7 +40,7 @@ namespace Debt_Book.ViewModel
 
         private void NavigateToOpenDebtorView()
         {
-            _navService.OpenWindow(typeof(AddDebtViewModel));
+            _navService.OpenWindow(typeof(AddDebtorViewModel));
             NotifyPropertyChanged(nameof(Debtors));
         }
 

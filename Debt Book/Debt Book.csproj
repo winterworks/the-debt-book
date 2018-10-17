@@ -93,7 +93,7 @@
     <Compile Include="Model\Debt.cs" />
     <Compile Include="Model\DebtBook.cs" />
     <Compile Include="Model\Debtor.cs" />
-    <Compile Include="ViewModel\AddDebtViewModel.cs" />
+    <Compile Include="ViewModel\AddDebtorViewModel.cs" />
     <Compile Include="ViewModel\DebtorViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="View\AddDebtorView.xaml.cs">

@@ -9,6 +9,6 @@ namespace Debt_Book.View
         private readonly DebtBook db = DebtBook.Instance;
         public MainViewModel MainViewModel => new MainViewModel(ns, db);
         public DebtorViewModel DebtorViewModel => new DebtorViewModel(ns, db);
-        public AddDebtViewModel AddDebtViewModel => new AddDebtViewModel(ns, db);
+        public AddDebtorViewModel AddDebtorViewModel => new AddDebtorViewModel(ns, db);
     }
 }
