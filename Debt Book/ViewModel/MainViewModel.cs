@@ -1,5 +1,4 @@
-﻿using Debt_Book.Annotations;
-using Debt_Book.Model;
+﻿using Debt_Book.Model;
 using Debt_Book.View;
 using GalaSoft.MvvmLight.Messaging;
 using System.Collections.Generic;

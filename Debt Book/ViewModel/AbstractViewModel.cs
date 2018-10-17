@@ -1,5 +1,4 @@
-﻿using Debt_Book.Annotations;
-using Debt_Book.Model;
+﻿using Debt_Book.Model;
 using Debt_Book.View;
 using System;
 using System.Collections.Generic;
@@ -23,8 +22,6 @@ namespace Debt_Book.ViewModel
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
-
-        [NotifyPropertyChangedInvocator]
         protected virtual void NotifyPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
