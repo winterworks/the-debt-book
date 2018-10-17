@@ -1,8 +1,9 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using System.Windows.Input;
 using Debt_Book.Model;
 using Debt_Book.View;
@@ -47,6 +48,11 @@ namespace Debt_Book.ViewModel
         private bool SaveDebtorCanExecute()
         {
             return (Name != "");
+        }
+        
+        protected override void ExitWindow()
+        {
+            _navService.CloseWindow(typeof(AddDebtViewModel));
         }
     }
 }

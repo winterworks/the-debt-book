@@ -38,8 +38,8 @@
             <Label Grid.Row="2" Grid.Column="0" Content="Initial value" HorizontalAlignment="Left"/>
             <TextBox Grid.Row="2" Grid.Column="1" Width="200" Name="InitialDebt"/>
 
-            <Button Content="Cancel" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Left" />
-            <Button Content="Add debtor" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Right" Command="{Binding SaveDebtorCommand, Mode=OneTime}" />
+            <Button Content="Cancel" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Left" Command="{Binding Cancel}" />
+            <Button Content="Add debtor" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Right" Command="{Binding SaveDebtorCommand}" />
         </Grid>
     </Grid>
 </Window>
