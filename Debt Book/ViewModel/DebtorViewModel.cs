@@ -6,15 +6,9 @@ namespace Debt_Book.ViewModel
 {
     class DebtorViewModel: AbstractViewModel
     {
-        private readonly INavigationService ns;
         public Debtor _selectedDebtor { get; set; }
 
-        public DebtorViewModel(INavigationService ns, DebtBook db) : base(ns, db){
-            Messenger.Default.Register<Debtor>(this, (debtor) =>
-            {
-                this._selectedDebtor = debtor;
-            });
-        }
+        public DebtorViewModel(INavigationService ns, DebtBook db) : base(ns, db) {}
         
         protected override void ExitWindow()
         {

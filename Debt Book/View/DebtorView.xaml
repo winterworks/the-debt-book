@@ -5,8 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         Title="DebtorView" Height="450" Width="800"
-        ResizeMode="NoResize"
-        DataContext="{Binding Source={StaticResource ViewModelLocator}, Path=DebtorViewModel}" >
+        ResizeMode="NoResize">
     <Window.Resources>
         <Style TargetType="Label" >
             <Setter Property="Margin" Value="5,5,5,5"></Setter>
@@ -30,7 +29,7 @@
                     <RowDefinition Height="250"/>
                     <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
-                <Label Grid.Row="0" Grid.Column="0" Content="Debts of {debtorName}" HorizontalAlignment="Left" />
+                <Label Grid.Row="0" Grid.Column="0" Content="{Binding _selectedDebtor.Name, StringFormat=Debts of {0}}" HorizontalAlignment="Left" />
                 <Button Grid.Row="0" Grid.Column="1" Content="Cancel" Command="{Binding Cancel}"/>
                 <ListBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Width="250" ItemsSource="" SelectedItem="">
                     <ListBox.ItemTemplate>

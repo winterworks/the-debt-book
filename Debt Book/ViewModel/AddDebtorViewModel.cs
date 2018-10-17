@@ -25,6 +25,7 @@ namespace Debt_Book.ViewModel
             set {
                 if (value != debtor.Name) {
                     debtor.Name = value;
+                    NotifyPropertyChanged();
                 }
             }
         }

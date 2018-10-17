@@ -30,8 +30,12 @@ namespace Debt_Book.ViewModel
                 NotifyPropertyChanged();
 
                 // Make an action when Debtor is clicked
-                _navService.OpenWindow(typeof(DebtorViewModel));
-                Messenger.Default.Send(_selectedDebtor);
+                DebtorViewModel vm = ViewModelLocator.DebtorViewModel;
+
+                // set values to view model
+                vm._selectedDebtor = _selectedDebtor;
+
+                _navService.OpenWindow(vm);
             }
         }
         
@@ -40,7 +44,7 @@ namespace Debt_Book.ViewModel
 
         private void NavigateToOpenDebtorView()
         {
-            _navService.OpenWindow(typeof(AddDebtorViewModel));
+            _navService.OpenWindow(ViewModelLocator.AddDebtorViewModel);
             NotifyPropertyChanged(nameof(Debtors));
         }
 
