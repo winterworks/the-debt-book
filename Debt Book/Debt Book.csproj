@@ -74,7 +74,7 @@
     <Compile Include="ViewModel\AbstractViewModel.cs" />
     <Compile Include="View\INavigationService.cs" />
     <Compile Include="View\ViewModelLocator.cs" />
-    <Page Include="View\AddDebtView.xaml">
+    <Page Include="View\AddDebtorView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -96,8 +96,8 @@
     <Compile Include="ViewModel\AddDebtViewModel.cs" />
     <Compile Include="ViewModel\DebtorViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
-    <Compile Include="View\AddDebtView.xaml.cs">
-      <DependentUpon>AddDebtView.xaml</DependentUpon>
+    <Compile Include="View\AddDebtorView.xaml.cs">
+      <DependentUpon>AddDebtorView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\NavigationService.cs" />
     <Compile Include="View\DebtorView.xaml.cs">
