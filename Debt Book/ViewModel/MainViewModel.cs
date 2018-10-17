@@ -2,6 +2,7 @@
 using Debt_Book.View;
 using GalaSoft.MvvmLight.Messaging;
 using System.Collections.Generic;
+using System.Windows.Input;
 
 namespace Debt_Book.ViewModel
 {
@@ -30,6 +31,13 @@ namespace Debt_Book.ViewModel
                 Messenger.Default.Send(_selectedDebtor);
             }
         }
+        
+        private ICommand _openDebtorView;
+        public ICommand OpenDebtorView => _openDebtorView ?? (_openDebtorView = new RelayCommand(NavigateToOpenDebtorView));
 
+        private void NavigateToOpenDebtorView()
+        {
+            _navService.OpenWindow(typeof(AddDebtViewModel));
+        }
     }
 }

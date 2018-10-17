@@ -21,6 +21,7 @@
     <Grid Margin="32,32,32,32">
         <Grid HorizontalAlignment="Center">
             <Label Content="Debts" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Button Content="Add debtor" HorizontalAlignment="Right" VerticalAlignment="Top" Command="{Binding OpenDebtorView}" />
             <ListBox ItemsSource="{Binding Debtors}" SelectedItem="{Binding SelectedDebtor}"
                      HorizontalAlignment="Right" Width="250" Margin="0,32,0,0">
                 <!-- Solution inspired by http://stackoverflow.com/a/11102741 -->
@@ -35,7 +36,6 @@
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
-            <Button Content="Add debtor" HorizontalAlignment="Right" VerticalAlignment="Top" />
         </Grid>
     </Grid>
 </Window>
