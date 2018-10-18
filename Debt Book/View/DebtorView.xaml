@@ -16,6 +16,9 @@
         <Style TargetType="Button" >
             <Setter Property="Margin" Value="5,5,5,5" />
         </Style>
+        <Style TargetType="TextBlock" >
+            <Setter Property="Margin" Value="5,0,10,0" />
+        </Style>
     </Window.Resources>
     <Grid Margin="32,32,32,32">
         <Grid HorizontalAlignment="Center">
@@ -31,16 +34,20 @@
                 </Grid.RowDefinitions>
                 <Label Grid.Row="0" Grid.Column="0" Content="{Binding _selectedDebtor.Name, StringFormat=Debts of {0}}" HorizontalAlignment="Left" />
                 <Button Grid.Row="0" Grid.Column="1" Content="Cancel" Command="{Binding Cancel}"/>
-                <ListBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Width="250" ItemsSource="" SelectedItem="">
+                <ListBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Width="250" ItemsSource="{Binding _selectedDebtor.Debts}" SelectedItem="">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <DockPanel></DockPanel>
+                            <DockPanel>
+                                <TextBlock Text="{Binding Description}" DockPanel.Dock="Left" Width="120" />
+                                <TextBlock Text="{Binding Date, StringFormat='{}{0:MM/dd/yyyy}'}" DockPanel.Dock="Left" Width="80" />
+                                <TextBlock Text="{Binding Value}" DockPanel.Dock="Left" Width="30" />
+                            </DockPanel>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
                 
-                <TextBox Grid.Row="2" Grid.Column="0" Name="Debt"/>
-                <Button Grid.Row="2" Grid.Column="1" Content="Add debt"/>
+                <TextBox Grid.Row="2" Grid.Column="0" Name="Debt" Text="{Binding Path=newDebt, Mode=TwoWay}"/>
+                <Button Grid.Row="2" Grid.Column="1" Content="Add debt" Command="{Binding AddDebt}" />
             </Grid>
             
         </Grid>

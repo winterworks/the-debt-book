@@ -1,11 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections.ObjectModel;
 
 namespace Debt_Book.Model
 {
     class Debtor
     {
         public string Name { get; set; }
-        public List<Debt> Debts { get; }
+        public ObservableCollection<Debt> Debts { get; }
 
         public double DebtSum
         {
@@ -23,10 +23,10 @@ namespace Debt_Book.Model
         public Debtor(string name)
         {
             this.Name = name;
-            this.Debts = new List<Debt>();
+            this.Debts = new ObservableCollection<Debt>();
         }
 
-        public Debtor(string name, List<Debt> debtList)
+        public Debtor(string name, ObservableCollection<Debt> debtList)
         {
             this.Name = name;
             this.Debts = debtList;

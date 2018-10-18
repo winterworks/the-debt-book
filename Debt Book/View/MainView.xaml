@@ -31,7 +31,7 @@
                             <TextBlock Text="{Binding Name}" DockPanel.Dock="Left"
                                        Margin="5,0,10,0" Width="150" />
                             <TextBlock Text="{Binding DebtSum}" DockPanel.Dock="Right"
-                                       Margin="5,0,10,0" Width="10" />
+                                       Margin="5,0,10,0" Width="20" />
                         </DockPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>

@@ -1,9 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
 namespace Debt_Book.Model
 {
-    // This thread safe singleton implemenattion was inspired by http://csharpindepth.com/Articles/General/Singleton.aspx
+    // This thread safe singleton implementation was inspired by http://csharpindepth.com/Articles/General/Singleton.aspx
 
     class DebtBook
     {
@@ -37,7 +38,10 @@ namespace Debt_Book.Model
             Debtors = new ObservableCollection<Debtor>();
 
             // mock data
-            AddDebtor(new Debtor("Henry"));
+            Debtor debtor = new Debtor("Henry");
+            debtor.Debts.Add(new Debt(DateTime.Now, 12, "Submarine"));
+            debtor.Debts.Add(new Debt(DateTime.Now, 5, "Milkshake"));
+            AddDebtor(debtor);
             AddDebtor(new Debtor("Jane"));
         }
 
