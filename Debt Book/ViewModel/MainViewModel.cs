@@ -1,4 +1,4 @@
-﻿using Debt_Book.Model;
+using Debt_Book.Model;
 using Debt_Book.View;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
@@ -36,9 +36,9 @@ namespace Debt_Book.ViewModel
         }
         
         private ICommand _openDebtorView;
-        public ICommand OpenDebtorView => _openDebtorView ?? (_openDebtorView = new RelayCommand(NavigateToOpenDebtorView));
+        public ICommand OpenDebtorView => _openDebtorView ?? (_openDebtorView = new RelayCommand(NavigateToAddDebtorView));
 
-        private void NavigateToOpenDebtorView()
+        private void NavigateToAddDebtorView()
         {
             _navService.OpenWindow(ViewModelLocator.AddDebtorViewModel);
             NotifyPropertyChanged(nameof(Debtors));

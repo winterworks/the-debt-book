@@ -21,7 +21,7 @@ namespace Debt_Book.ViewModel
         }
         
         Debt debt = new Debt(DateTime.Now, 0, "");
-        public double newDebt
+        public double newDebtValue
         {
             get => debt.Value;
             set {
@@ -31,7 +31,16 @@ namespace Debt_Book.ViewModel
                 }
             }
         }
-        
+        public string newDebtDescription
+        {
+            get => debt.Description;
+            set {
+                if (value != debt.Description) {
+                    debt.Description = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
         
         private ICommand _addDebt;
 

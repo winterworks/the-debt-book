@@ -29,7 +29,9 @@
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions >
                     <RowDefinition Height="auto"/>
-                    <RowDefinition Height="250"/>
+                    <RowDefinition Height="200"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
                 <Label Grid.Row="0" Grid.Column="0" Content="{Binding _selectedDebtor.Name, StringFormat=Debts of {0}}" HorizontalAlignment="Left" />
@@ -46,8 +48,13 @@
                     </ListBox.ItemTemplate>
                 </ListBox>
                 
-                <TextBox Grid.Row="2" Grid.Column="0" Name="Debt" Text="{Binding Path=newDebt, Mode=TwoWay}"/>
-                <Button Grid.Row="2" Grid.Column="1" Content="Add debt" Command="{Binding AddDebt}" />
+                <Label Grid.Row="2" Grid.Column="0" Content="Value" />
+                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Path=newDebtValue, Mode=TwoWay}"/>
+                
+                <Label Grid.Row="3" Grid.Column="0" Content="Description" />
+                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Path=newDebtDescription, Mode=TwoWay}"/>
+                
+                <Button Grid.Row="4" Grid.Column="1" Content="Add debt" Command="{Binding AddDebt}" />
             </Grid>
             
         </Grid>
