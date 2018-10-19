@@ -43,15 +43,12 @@ namespace Debt_Book.Model
 
         public void AddDebtor(Debtor debtor)
         {
-            Debtors.Insert(0, debtor);
+            Debtors.Add(debtor);
         }
 
         public void AddDebtTo(Debtor debtor, Debt debt)
         {
-            /* 
-             * TODO: Check if person is in the DebtList -> 
-             * throw error if its not 
-             */
+            if (!Debtors.Contains(debtor)) return;
             int index = Debtors.IndexOf(debtor);
             Debtors[index].Debts.Add(debt);
         }

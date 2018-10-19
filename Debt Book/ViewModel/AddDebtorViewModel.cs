@@ -23,7 +23,7 @@ namespace Debt_Book.ViewModel
         {
             get => debtor.Name;
             set {
-                if (value != debtor.Name) {
+                    if (value != debtor.Name) {
                     debtor.Name = value;
                 }
             }
