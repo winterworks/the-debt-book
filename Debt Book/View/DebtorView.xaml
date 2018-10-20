@@ -49,7 +49,7 @@
                 </ListBox>
 
                 <Label Grid.Row="2" Grid.Column="0" Content="Value" />
-                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Path=NewDebtValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Path=NewDebtValue, Mode=TwoWay, StringFormat=F1, UpdateSourceTrigger=PropertyChanged}"/>
 
                 <Label Grid.Row="3" Grid.Column="0" Content="Description" />
                 <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Path=NewDebtDescription, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
