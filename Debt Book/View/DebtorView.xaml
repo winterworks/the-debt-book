@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="Debtor Details" Height="450" Width="330"
+        Title="DebtorView" Height="450" Width="330"
         ResizeMode="NoResize">
     <Window.Resources>
         <Style TargetType="Label" >
@@ -35,28 +35,30 @@
                     <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
                 <Label Grid.Row="0" Grid.Column="0" Content="{Binding SelectedDebtor.Name, StringFormat=Debts of {0}}" HorizontalAlignment="Left" />
-                <Button Grid.Row="0" Grid.Column="1" Content="Go back" Command="{Binding Cancel}"/>
-                <ListBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Width="250" ItemsSource="{Binding SelectedDebtor.Debts}" SelectedItem="">
+                <Button Grid.Row="0" Grid.Column="1" Content="Go back" Command="{Binding Cancel}" Margin="10,5,0,5"/>
+                <ListBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Width="250" ItemsSource="{Binding SelectedDebtor.Debts}" SelectedItem="" Margin="0,0,0,37">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <DockPanel>
-                                <TextBlock Text="{Binding Description}" DockPanel.Dock="Left" Width="120" />
-                                <TextBlock Text="{Binding Date, StringFormat='{}{0:MM/dd/yyyy}'}" DockPanel.Dock="Left" Width="80" />
-                                <TextBlock Text="{Binding Value}" DockPanel.Dock="Left" Width="30" />
+                                <TextBlock Text="{Binding Description}" DockPanel.Dock="Left" Width="100" />
+                                <TextBlock Text="{Binding Date, StringFormat='{}{0:MM/dd/yyyy}'}" DockPanel.Dock="Left" Width="80" TextAlignment="Right" />
+                                <TextBlock Text="{Binding Value}" DockPanel.Dock="Left" Width="50" TextAlignment="Right" />
                             </DockPanel>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
-                
+
                 <Label Grid.Row="2" Grid.Column="0" Content="Value" />
                 <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Path=NewDebtValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                
+
                 <Label Grid.Row="3" Grid.Column="0" Content="Description" />
                 <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Path=NewDebtDescription, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                
-                <Button Grid.Row="4" Grid.Column="1" Content="Add debt" Command="{Binding AddDebt}" />
+
+                <Button Grid.Row="4" Grid.Column="1" Content="Add debt" Command="{Binding AddDebt}" Margin="5,20,5,-11" />
+                <Label Grid.Row="1" Grid.Column="0" Content="Total Debt:" Margin="5,169,5,5" />
+                <Label HorizontalContentAlignment="Right" Grid.Row="1" Grid.Column="1" Content="{Binding DebtSum}" Margin="5,169,5,5" />
             </Grid>
-            
+
         </Grid>
     </Grid>
 </Window>

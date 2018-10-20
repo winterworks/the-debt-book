@@ -40,6 +40,8 @@ namespace Debt_Book.ViewModel
             }
         }
 
+        public double DebtSum { get => SelectedDebtor.DebtSum; }
+
         private ICommand _addDebt;
         public ICommand AddDebt
         {
@@ -51,6 +53,7 @@ namespace Debt_Book.ViewModel
             Debt debt = new Debt(DateTime.Now, double.Parse(NewDebtValue), NewDebtDescription);
             SelectedDebtor.AddDebt(debt);
             _debtBook.UpdateDebtor(SelectedDebtor);
+            NotifyPropertyChanged(nameof(DebtSum));
             NewDebtDescription = "";
             NewDebtValue = "0";
         }
