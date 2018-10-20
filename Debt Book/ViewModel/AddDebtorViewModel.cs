@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 using Debt_Book.Model;
 using Debt_Book.View;
 
@@ -16,7 +10,6 @@ namespace Debt_Book.ViewModel
 
         public AddDebtorViewModel(INavigationService ns, DebtBook db) : base(ns, db){}
 
-
         Debtor debtor = new Debtor("");
 
         public string Name
@@ -25,6 +18,7 @@ namespace Debt_Book.ViewModel
             set {
                     if (value != debtor.Name) {
                     debtor.Name = value;
+                    NotifyPropertyChanged();
                 }
             }
         }
