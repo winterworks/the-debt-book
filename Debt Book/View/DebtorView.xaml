@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="DebtorView" Height="450" Width="800"
+        Title="Debtor Details" Height="450" Width="330"
         ResizeMode="NoResize">
     <Window.Resources>
         <Style TargetType="Label" >
@@ -35,7 +35,7 @@
                     <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
                 <Label Grid.Row="0" Grid.Column="0" Content="{Binding SelectedDebtor.Name, StringFormat=Debts of {0}}" HorizontalAlignment="Left" />
-                <Button Grid.Row="0" Grid.Column="1" Content="Cancel" Command="{Binding Cancel}"/>
+                <Button Grid.Row="0" Grid.Column="1" Content="Go back" Command="{Binding Cancel}"/>
                 <ListBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Width="250" ItemsSource="{Binding SelectedDebtor.Debts}" SelectedItem="">
                     <ListBox.ItemTemplate>
                         <DataTemplate>

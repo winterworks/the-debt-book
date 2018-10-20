@@ -9,7 +9,7 @@ namespace Debt_Book.ViewModel
     {
         public Debtor SelectedDebtor { get; set; }
 
-        private string _newDebtValue;
+        private string _newDebtValue = "0";
         private string _newDebtDescription;
 
         public DebtorViewModel(INavigationService ns, DebtBook db) : base(ns, db) {}
@@ -51,14 +51,16 @@ namespace Debt_Book.ViewModel
             Debt debt = new Debt(DateTime.Now, double.Parse(NewDebtValue), NewDebtDescription);
             SelectedDebtor.AddDebt(debt);
             _debtBook.UpdateDebtor(SelectedDebtor);
+            NewDebtDescription = "";
+            NewDebtValue = "0";
         }
 
         private bool CreateNewDebtCanExecute()
         {
             bool EmptyFields = (NewDebtDescription == "" || NewDebtDescription == null
                     || NewDebtValue == "" || NewDebtValue == null);
-            bool OnlyNumbers = double.TryParse(NewDebtValue, out double _);
-            return !EmptyFields && OnlyNumbers;
+            bool OnlyNumbers = double.TryParse(NewDebtValue, out double zero);
+            return !EmptyFields && OnlyNumbers && zero != 0;
         }
 
         protected override void ExitWindow()

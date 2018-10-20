@@ -32,7 +32,6 @@ namespace Debt_Book.View
             window.ShowDialog();
         }
 
-        
         public void CloseWindow(Type vm)
         {
             if (!activeWindows.ContainsKey(vm.Name)) return;

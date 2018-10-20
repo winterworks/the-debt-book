@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
+        Title="The Debt Book" Height="450" Width="330"
         ResizeMode="NoResize"
         DataContext="{Binding Source={StaticResource ViewModelLocator}, Path=MainViewModel}">
     <Window.Resources>
@@ -22,13 +22,13 @@
         <Grid HorizontalAlignment="Center">
             <Label Content="Debts" HorizontalAlignment="Left" VerticalAlignment="Top" />
             <Button Content="Add debtor" HorizontalAlignment="Right" VerticalAlignment="Top" Command="{Binding OpenDebtorView}" />
-            <ListBox ItemsSource="{Binding Debtors, Mode=OneWay}" SelectedItem="{Binding SelectedDebtor}"
+            <ListBox ItemsSource="{Binding Debtors, Mode=OneWay}" SelectedIndex="{Binding Index}" SelectedItem="{Binding SelectedDebtor}"
                      HorizontalAlignment="Right" Width="250" Margin="0,32,0,0">
-                <!-- Solution inspired by http://stackoverflow.com/a/11102741 -->
+                <!-- ListBox.ItemTemplate inspired by http://stackoverflow.com/a/11102741 -->
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <DockPanel>
-                            <TextBlock Text="{Binding Name, Mode=OneWay}" DockPanel.Dock="Left"
+                            <TextBlock Text="{Binding Name, Mode=OneTime}" DockPanel.Dock="Left"
                                        Margin="5,0,10,0" Width="150" />
                             <TextBlock Text="{Binding DebtSum, Mode=OneWay}" DockPanel.Dock="Right"
                                        Margin="5,0,10,0" Width="20" />
