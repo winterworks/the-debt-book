@@ -6,22 +6,20 @@ namespace Debt_Book.ViewModel
 {
     class AddDebtorViewModel: AbstractViewModel
     {
-        private readonly INavigationService ns;
-
-        public AddDebtorViewModel(INavigationService ns, DebtBook db) : base(ns, db){}
-
-        Debtor debtor = new Debtor("");
+        private string _debtorName;
 
         public string Name
         {
-            get => debtor.Name;
+            get => _debtorName;
             set {
-                    if (value != debtor.Name) {
-                    debtor.Name = value;
+                    if (value != _debtorName) {
+                    _debtorName = value;
                     NotifyPropertyChanged();
                 }
             }
         }
+
+        public AddDebtorViewModel(INavigationService ns, DebtBook db) : base(ns, db) { }
 
         private ICommand _saveDebtorCommand;
         public ICommand SaveDebtorCommand
@@ -32,17 +30,16 @@ namespace Debt_Book.ViewModel
             }
         }
 
-
         private void SaveDebtor()
         {
-            // save new debtor here
+            Debtor debtor = new Debtor(_debtorName);
             _debtBook.AddDebtor(debtor);
             ExitWindow();
         }
 
         private bool SaveDebtorCanExecute()
         {
-            return (Name != "");
+            return (Name != "" && Name != null);
         }
         
         protected override void ExitWindow()

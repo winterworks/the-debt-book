@@ -4,7 +4,7 @@ namespace Debt_Book.Model
 {
     class Debtor
     {
-        public string Name { get; set; }
+        public string Name { get; }
         public ObservableCollection<Debt> Debts { get; }
 
         public double DebtSum
@@ -26,10 +26,9 @@ namespace Debt_Book.Model
             this.Debts = new ObservableCollection<Debt>();
         }
 
-        public Debtor(string name, ObservableCollection<Debt> debtList)
+        public void AddDebt(Debt debt)
         {
-            this.Name = name;
-            this.Debts = debtList;
+            Debts.Add(debt);
         }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
 namespace Debt_Book.Model
@@ -17,7 +16,6 @@ namespace Debt_Book.Model
         {
         }
         
-
         public static DebtBook Instance
         {
             get
@@ -30,7 +28,6 @@ namespace Debt_Book.Model
             }
         }
 
-
         public ObservableCollection<Debtor> Debtors { get; }
 
         private DebtBook()
@@ -39,8 +36,8 @@ namespace Debt_Book.Model
 
             // mock data
             Debtor debtor = new Debtor("Henry");
-            debtor.Debts.Add(new Debt(DateTime.Now, 12, "Submarine"));
-            debtor.Debts.Add(new Debt(DateTime.Now, 5, "Milkshake"));
+            debtor.AddDebt(new Debt(DateTime.Now, 12, "Submarine"));
+            debtor.AddDebt(new Debt(DateTime.Now, 5, "Milkshake"));
             AddDebtor(debtor);
             AddDebtor(new Debtor("Jane"));
         }
@@ -50,11 +47,14 @@ namespace Debt_Book.Model
             Debtors.Add(debtor);
         }
 
-        public void AddDebtTo(Debtor debtor, Debt debt)
+        public void UpdateDebtor(Debtor debtor)
         {
             if (!Debtors.Contains(debtor)) return;
             int index = Debtors.IndexOf(debtor);
-            Debtors[index].Debts.Add(debt);
+
+            // Trigger CollectionChanged
+            Debtors[index] = null;
+            Debtors[index] = debtor;
         }
     }
 }

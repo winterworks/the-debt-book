@@ -14,14 +14,15 @@ namespace Debt_Book.ViewModel
         public ObservableCollection<Debtor> Debtors => _debtBook.Debtors;
 
         public Debtor SelectedDebtor
-        // solution inspired by http://stackoverflow.com/a/12297537
         {
-            get {
+            // solution inspired by http://stackoverflow.com/a/12297537
+            get
+            {
                 return _selectedDebtor;
             }
             set
             {
-                if(value == _selectedDebtor) return;
+                if(value == _selectedDebtor || value == null) return;
                 _selectedDebtor = value;
                 NotifyPropertyChanged();
 
@@ -29,7 +30,7 @@ namespace Debt_Book.ViewModel
                 DebtorViewModel vm = ViewModelLocator.DebtorViewModel;
 
                 // set values to view model
-                vm._selectedDebtor = _selectedDebtor;
+                vm.SelectedDebtor = _selectedDebtor;
 
                 _navService.OpenWindow(vm);
             }

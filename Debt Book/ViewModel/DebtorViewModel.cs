@@ -1,57 +1,69 @@
 ﻿using System;
-using System.Collections.ObjectModel;
 using System.Windows.Input;
 using Debt_Book.Model;
 using Debt_Book.View;
-using GalaSoft.MvvmLight.Messaging;
 
 namespace Debt_Book.ViewModel
 {
     class DebtorViewModel : AbstractViewModel
     {
-        public Debtor _selectedDebtor { get; set; }
+        public Debtor SelectedDebtor { get; set; }
 
-        private ObservableCollection<Debt> Debts;
+        private string _newDebtValue;
+        private string _newDebtDescription;
 
         public DebtorViewModel(INavigationService ns, DebtBook db) : base(ns, db) {}
+
+        public string NewDebtValue
+        {
+            get => _newDebtValue;
+            set
+            {
+                if (value != _newDebtValue)
+                {
+                    _newDebtValue = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
+        public string NewDebtDescription
+        {
+            get => _newDebtDescription;
+            set
+            {
+                if (value != _newDebtDescription)
+                {
+                    _newDebtDescription = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
+        private ICommand _addDebt;
+        public ICommand AddDebt
+        {
+            get { return _addDebt ?? (_addDebt = new RelayCommand(CreateNewDebt, CreateNewDebtCanExecute)); }
+        }
+
+        private void CreateNewDebt()
+        {
+            Debt debt = new Debt(DateTime.Now, double.Parse(NewDebtValue), NewDebtDescription);
+            SelectedDebtor.AddDebt(debt);
+            _debtBook.UpdateDebtor(SelectedDebtor);
+        }
+
+        private bool CreateNewDebtCanExecute()
+        {
+            bool EmptyFields = (NewDebtDescription == "" || NewDebtDescription == null
+                    || NewDebtValue == "" || NewDebtValue == null);
+            bool OnlyNumbers = double.TryParse(NewDebtValue, out double _);
+            return !EmptyFields && OnlyNumbers;
+        }
 
         protected override void ExitWindow()
         {
             _navService.CloseWindow(typeof(DebtorViewModel));
-        }
-        
-        Debt debt = new Debt(DateTime.Now, 0, "");
-        public double newDebtValue
-        {
-            get => debt.Value;
-            set {
-                if (value != debt.Value) {
-                    debt.Value = value;
-                    NotifyPropertyChanged();
-                }
-            }
-        }
-        public string newDebtDescription
-        {
-            get => debt.Description;
-            set {
-                if (value != debt.Description) {
-                    debt.Description = value;
-                    NotifyPropertyChanged();
-                }
-            }
-        }
-        
-        private ICommand _addDebt;
-
-        public ICommand AddDebt
-        {
-            get { return _addDebt ?? (_addDebt = new RelayCommand(createNewDebt)); }
-        }
-
-        private void createNewDebt()
-        {
-            _selectedDebtor.Debts.Add(debt);
         }
     }
 }

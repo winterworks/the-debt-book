@@ -34,9 +34,9 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
-                <Label Grid.Row="0" Grid.Column="0" Content="{Binding _selectedDebtor.Name, StringFormat=Debts of {0}}" HorizontalAlignment="Left" />
+                <Label Grid.Row="0" Grid.Column="0" Content="{Binding SelectedDebtor.Name, StringFormat=Debts of {0}}" HorizontalAlignment="Left" />
                 <Button Grid.Row="0" Grid.Column="1" Content="Cancel" Command="{Binding Cancel}"/>
-                <ListBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Width="250" ItemsSource="{Binding _selectedDebtor.Debts}" SelectedItem="">
+                <ListBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Width="250" ItemsSource="{Binding SelectedDebtor.Debts}" SelectedItem="">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <DockPanel>
@@ -49,10 +49,10 @@
                 </ListBox>
                 
                 <Label Grid.Row="2" Grid.Column="0" Content="Value" />
-                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Path=newDebtValue, Mode=TwoWay}"/>
+                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Path=NewDebtValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                 
                 <Label Grid.Row="3" Grid.Column="0" Content="Description" />
-                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Path=newDebtDescription, Mode=TwoWay}"/>
+                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Path=NewDebtDescription, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                 
                 <Button Grid.Row="4" Grid.Column="1" Content="Add debt" Command="{Binding AddDebt}" />
             </Grid>
