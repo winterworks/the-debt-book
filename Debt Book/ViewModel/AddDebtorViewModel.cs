@@ -1,6 +1,6 @@
-﻿using System.Windows.Input;
+﻿using Debt_Book.View;
 using Debt_Book.Model;
-using Debt_Book.View;
+using System.Windows.Input;
 
 namespace Debt_Book.ViewModel
 {

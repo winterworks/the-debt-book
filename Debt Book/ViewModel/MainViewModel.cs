@@ -1,7 +1,7 @@
-using Debt_Book.Model;
 using Debt_Book.View;
-using System.Collections.ObjectModel;
+using Debt_Book.Model;
 using System.Windows.Input;
+using System.Collections.ObjectModel;
 
 namespace Debt_Book.ViewModel
 {

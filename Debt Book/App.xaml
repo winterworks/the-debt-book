@@ -1,9 +1,5 @@
 ﻿<Application x:Class="Debt_Book.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:v="clr-namespace:Debt_Book.View"
-             StartupUri="View/MainView.xaml">
-    <Application.Resources>
-        <v:ViewModelLocator x:Key="ViewModelLocator" />
-    </Application.Resources>
+             xmlns:v="clr-namespace:Debt_Book.View">
 </Application>
