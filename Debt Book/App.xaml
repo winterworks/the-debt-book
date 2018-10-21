@@ -1,5 +1,5 @@
 ﻿<Application x:Class="Debt_Book.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:v="clr-namespace:Debt_Book.View">
+             xmlns:v="clr-namespace:Debt_Book.ViewModel">
 </Application>

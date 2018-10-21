@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Debt_Book.View
+namespace Debt_Book.ViewModel
 {
     /// <summary>
     /// Interaction logic for AddDebtView.xaml

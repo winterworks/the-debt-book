@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Debt_Book.View
+namespace Debt_Book.ViewModel
 {
     interface INavigationService
     {
