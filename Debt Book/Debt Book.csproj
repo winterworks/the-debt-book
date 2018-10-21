@@ -57,7 +57,7 @@
     </ApplicationDefinition>
     <Compile Include="ViewModel\RelayCommand.cs" />
     <Compile Include="ViewModel\AbstractViewModel.cs" />
-    <Compile Include="View\INavigationService.cs" />
+    <Compile Include="ViewModel\INavigationService.cs" />
     <Compile Include="ViewModel\ViewModelFactory.cs" />
     <Page Include="View\AddDebtorView.xaml">
       <SubType>Designer</SubType>
