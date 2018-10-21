@@ -6,8 +6,8 @@ namespace Debt_Book.ViewModel
     {
         static private readonly INavigationService ns = new NavigationService();
 
-        static public MainViewModel MainViewModel => new MainViewModel(ns, DebtBook.Instance);
-        static public DebtorViewModel DebtorViewModel => new DebtorViewModel(ns, DebtBook.Instance);
-        static public AddDebtorViewModel AddDebtorViewModel => new AddDebtorViewModel(ns, DebtBook.Instance);
+        static public MainViewModel CreateMainViewModel() => new MainViewModel(ns, DebtBook.Instance);
+        static public DebtorViewModel CreateDebtorViewModel() => new DebtorViewModel(ns, DebtBook.Instance);
+        static public AddDebtorViewModel CreateAddDebtorViewModel() => new AddDebtorViewModel(ns, DebtBook.Instance);
     }
 }

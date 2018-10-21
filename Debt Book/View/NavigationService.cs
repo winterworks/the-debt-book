@@ -14,7 +14,7 @@ namespace Debt_Book.ViewModel
             Window window = null;
             switch (vmName)
             {
-                case "MainViewModel":
+                case "CreateMainViewModel":
                     window = new MainView() { DataContext = vm };
                     break;
                 case "DebtorViewModel":

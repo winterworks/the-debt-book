@@ -11,7 +11,7 @@ namespace Debt_Book
         {
             base.OnStartup(e);
             Window win = new MainView();
-            win.DataContext = ViewModel.ViewModelFactory.MainViewModel;
+            win.DataContext = ViewModel.ViewModelFactory.CreateMainViewModel();
             win.Show();
         }
     }

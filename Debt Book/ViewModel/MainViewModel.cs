@@ -26,7 +26,7 @@ namespace Debt_Book.ViewModel
                 NotifyPropertyChanged();
 
                 // Make an action when Debtor is clicked
-                DebtorViewModel vm = ViewModelFactory.DebtorViewModel;
+                DebtorViewModel vm = ViewModelFactory.CreateDebtorViewModel();
 
                 // set values to view model
                 vm.SelectedDebtor = _selectedDebtor;
@@ -40,7 +40,7 @@ namespace Debt_Book.ViewModel
 
         private void NavigateToAddDebtorView()
         {
-            _navService.OpenWindow(ViewModelFactory.AddDebtorViewModel);
+            _navService.OpenWindow(ViewModelFactory.CreateAddDebtorViewModel());
             NotifyPropertyChanged(nameof(Debtors));
         }
 
