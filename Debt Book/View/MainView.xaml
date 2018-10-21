@@ -31,7 +31,7 @@
                             <TextBlock Text="{Binding Name, Mode=OneTime}" DockPanel.Dock="Left"
                                        Margin="5,0,10,0" Width="150" />
                             <TextBlock Text="{Binding DebtSum, Mode=OneWay}" DockPanel.Dock="Right"
-                                       Margin="5,0,10,0" Width="20" />
+                                       Margin="5,0,10,0" Width="40" />
                         </DockPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
