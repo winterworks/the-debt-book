@@ -1,5 +1,4 @@
-﻿using Debt_Book.ViewModel;
-using Debt_Book.Model;
+﻿using Debt_Book.Model;
 using System.Windows.Input;
 
 namespace Debt_Book.ViewModel

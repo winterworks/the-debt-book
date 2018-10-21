@@ -1,5 +1,4 @@
 ﻿using System;
-using Debt_Book.ViewModel;
 using Debt_Book.Model;
 using System.Windows.Input;
 
