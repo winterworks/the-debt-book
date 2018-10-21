@@ -10,10 +10,8 @@ namespace Debt_Book
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
-            Window win = new MainView
-            {
-                DataContext = ViewModel.ViewModelFactory.MainViewModel
-            };
+            Window win = new MainView();
+            win.DataContext = ViewModel.ViewModelFactory.MainViewModel;
             win.Show();
         }
     }
