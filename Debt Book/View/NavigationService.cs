@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Windows;
 
-namespace Debt_Book.View
+namespace Debt_Book.ViewModel
 {
     class NavigationService : INavigationService
     {

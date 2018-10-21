@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Windows.Input;
+using Debt_Book.ViewModel;
 using Debt_Book.Model;
-using Debt_Book.View;
+using System.Windows.Input;
 
 namespace Debt_Book.ViewModel
 {
@@ -60,8 +60,7 @@ namespace Debt_Book.ViewModel
 
         private bool CreateNewDebtCanExecute()
         {
-            bool EmptyFields = (NewDebtDescription == "" || NewDebtDescription == null
-                    || NewDebtValue == 0.0 || NewDebtValue == null);
+            bool EmptyFields = (NewDebtDescription == "" || NewDebtDescription == null || NewDebtValue == 0.0);
             return !EmptyFields;
         }
 
